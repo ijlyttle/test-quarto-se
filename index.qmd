@@ -12,6 +12,7 @@ We can do stuff using R:
 #| message: false
 library("tidyverse")
 library("palmerpenguins")
+library("reticulate") # for renv to pick up as a dependency
 ```
 
 ```{r}
