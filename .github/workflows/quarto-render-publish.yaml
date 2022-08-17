@@ -45,7 +45,7 @@ jobs:
 
       - name: Diagnose Python
         run: |
-          reticulate::py_available(initalize = TRUE)
+          reticulate::py_available(initialize = TRUE)
           reticulate::py_config()
         shell: Rscript {0}
 
