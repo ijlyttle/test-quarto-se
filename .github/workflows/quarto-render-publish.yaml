@@ -43,6 +43,11 @@ jobs:
       - name: Set up renv
         uses: r-sqd-actions/actions/setup-renv@v2
 
+      - name: Diagnose Python
+        run: |
+          reticulate::py_discover_config()
+        shell: Rscript {0}
+
       - name: Render Quarto Project
         uses: r-sqd-actions/quarto-actions/render@v2
 
