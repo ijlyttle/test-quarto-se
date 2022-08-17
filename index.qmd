@@ -1,0 +1,73 @@
+---
+title: "test-quarto-se"
+---
+
+This is a Quarto website.
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+We can do stuff using R:
+
+```{r}
+#| code-fold: false
+#| message: false
+library("tidyverse")
+library("palmerpenguins")
+```
+
+```{r}
+#| message: false
+#| warning: false
+ggplot(
+  data = penguins,
+  aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(
+    aes(color = species, shape = species),
+    size = 3,
+    alpha = 0.8
+  ) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  theme_minimal() +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(
+    title = "Flipper and bill length",
+    subtitle = "Dimensions for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+    x = "Flipper length (mm)",
+    y = "Bill length (mm)",
+    color = "Penguin species",
+    shape = "Penguin species"
+  )
+```
+
+The ggplot2 code is taken from [palmerpenguins' README](https://github.com/allisonhorst/palmerpenguins/blob/c19a904462482430170bfe2c718775ddb7dbb885/README.Rmd#L34).
+
+We can also do stuff using Python:
+
+```{python}
+#| code-fold: false
+import pandas as pd
+import seaborn as sns 
+from palmerpenguins import load_penguins
+sns.set_style('whitegrid')
+```
+
+```{python}
+#| out-width: 80%
+penguins = load_penguins()
+
+g = sns.lmplot(
+      x="flipper_length_mm",
+      y="body_mass_g",
+      hue="species",
+      height=7,
+      data=penguins,
+      palette=['#FF8C00','#159090','#A034F0']
+    ).set_xlabels(
+      'Flipper Length'
+    ).set_ylabels(
+      'Body Mass'
+    )
+    
+g
+```
+
+The code is taken from Python's [palmerpenguins' README](https://github.com/mcnakhaee/palmerpenguins).

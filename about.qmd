@@ -1,0 +1,5 @@
+---
+title: "About"
+---
+
+This site is meant to serve as a test for publishing Quarto websites, using Actions, within Schneider Electric.
