@@ -45,8 +45,8 @@ jobs:
 
       - name: Diagnose Python
         run: |
+          reticulate::py_available(initalize = TRUE)
           reticulate::py_config()
-          reticulate::py_available()
         shell: Rscript {0}
 
       - name: Render Quarto Project
