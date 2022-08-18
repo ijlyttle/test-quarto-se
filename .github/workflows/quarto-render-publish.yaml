@@ -39,7 +39,7 @@ jobs:
          python --version
          python -c "import sysconfig; print(sysconfig.get_config_var('Py_ENABLE_SHARED'))"
          echo "RENV_PYTHON=$(echo which python)" >> $GITHUB_ENV
-         echo RENV_PYTHON
+         echo $RENV_PYTHON
 
       - name: Diagnose Python
         run: |
