@@ -46,8 +46,8 @@ jobs:
         env:
           RETICULATE_PYTHON: "./renv/python/virtualenvs/renv-python-3.9/bin/python"
         run: |
-          reticulate::py_available(initialize = TRUE)
-          reticulate::py_config()
+          # reticulate::py_available(initialize = TRUE)
+          reticulate::py_discover_config()
         shell: Rscript {0}
 
       - name: Render Quarto Project
