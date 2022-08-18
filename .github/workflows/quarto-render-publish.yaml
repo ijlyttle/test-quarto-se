@@ -33,12 +33,12 @@ jobs:
         with:
           use-public-rspm: true
 
-
       - name: Python Shared?
         run: |
          which python
          python --version
          python -c "import sysconfig; print(sysconfig.get_config_var('Py_ENABLE_SHARED'))"
+         export RENV_PYTHON=`which python`
 
       - name: Diagnose Python
         run: |
