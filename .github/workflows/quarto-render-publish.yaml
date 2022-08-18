@@ -30,7 +30,7 @@ jobs:
           cache: pip # caching pip dependenciess
 
       - name: Python Shared?
-      - run: |
+        run: |
          which python
          python --version
          python -c "import sysconfig; sysconfig.get_config_var('Py_ENABLE_SHARED')"
