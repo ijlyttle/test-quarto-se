@@ -18,7 +18,7 @@ jobs:
         with:
           version: 1.0.38
 
-      add software dependencies here
+      # add software dependencies here
       - name: Install additional libraries on Linux
         if: runner.os == 'Linux'
         run: |
