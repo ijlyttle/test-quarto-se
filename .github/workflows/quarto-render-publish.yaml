@@ -44,7 +44,7 @@ jobs:
 
       - name: Diagnose Python
         env:
-          RETICULATE_PYTHON: "./renv/python/virtualenvs/renv-python-3.9/bin/python""
+          RETICULATE_PYTHON: "./renv/python/virtualenvs/renv-python-3.9/bin/python"
         run: |
           reticulate::py_available(initialize = TRUE)
           reticulate::py_config()
