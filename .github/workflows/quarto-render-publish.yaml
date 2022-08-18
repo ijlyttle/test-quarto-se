@@ -43,6 +43,8 @@ jobs:
          python -c "import sysconfig; print(sysconfig.get_config_var('Py_ENABLE_SHARED'))"
 
       - name: Diagnose Python
+        env:
+          RETICULATE_PYTHON: "./renv/python/virtualenvs/renv-python-3.9/bin/python""
         run: |
           reticulate::py_available(initialize = TRUE)
           reticulate::py_config()
