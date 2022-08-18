@@ -27,7 +27,18 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: 3.9
-          cache: pip # caching pip dependenciess
+          cache: pip # caching pip dependencies
+
+      - name: Python Shared?
+        run: |
+         which python
+         python --version
+         python -c "import sysconfig; print(sysconfig.get_config_var('Py_ENABLE_SHARED'))"
+
+      - name: Diagnose Python
+        run: |
+          reticulate::py_discover_config()
+        shell: Rscript {0}
 
       - uses: r-sqd-actions/actions/setup-r@v2
         with:
@@ -43,10 +54,7 @@ jobs:
          python -c "import sysconfig; print(sysconfig.get_config_var('Py_ENABLE_SHARED'))"
 
       - name: Diagnose Python
-        # env:
-        #   RETICULATE_PYTHON: "./renv/python/virtualenvs/renv-python-3.9/bin/python"
         run: |
-          # reticulate::py_available(initialize = TRUE)
           reticulate::py_discover_config()
         shell: Rscript {0}
 
