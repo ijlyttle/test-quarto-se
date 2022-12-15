@@ -71,3 +71,7 @@ g
 ```
 
 The code is taken from Python's [palmerpenguins' README](https://github.com/mcnakhaee/palmerpenguins).
+
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+
+
